@@ -1,0 +1,92 @@
+/* 面板 */
+.control-panel {
+	position: absolute;
+	background-color: rgba(190, 190, 190, 0.4);
+	min-width: 40px;
+	min-height: 40px;
+	border-radius: 4px;
+}
+
+/* 主题颜色 */
+.color-green{
+	color: green;
+}
+/* 标题字体 */
+.title-2 {
+	font-size: 1.5rem;
+}
+
+.text-center {
+	text-align: center;
+}
+
+/* 卡片 */
+.module-card {
+	// background-color: #fff;
+	overflow: hidden;
+	border-radius: 4px;
+	
+	&.dark-mode{
+		color: #fff;
+	}
+	
+	.card-head {
+		margin: 20px;
+		display: flex;
+		min-height: 20px;
+		padding: 12px 0px;
+		
+		.card-title {
+			flex-grow: 1;
+		}
+		
+		.card-extend {
+			align-self: flex-end;
+		}
+	}
+
+	.card-body {
+		margin: 20px;
+	}
+
+}
+
+.left-control-panel,
+	.right-control-panel,
+	.top-control-panel,
+	.bottom-control-panel {
+		position: absolute;
+		z-index: 100;
+		// width: 0;
+		// height: 0;
+	}
+	
+	.left-control-panel,
+	.right-control-panel {
+
+	}
+	
+	.top-control-panel,
+	.bottom-control-panel {
+
+	}
+	
+	.left-control-panel {
+		left: 0px;
+	}
+	
+	.right-control-panel {
+		right: 0px;
+	}
+	
+	.top-control-panel {
+		top: 0px;
+	}
+	
+	.bottom-control-panel {
+		bottom: 0px;
+		
+		& > * {
+			transform: translateX(-100%);
+		}
+	}

@@ -1,0 +1,89 @@
+.col-layout {
+	display: flex;
+	justify-content: space-between;
+	
+	@for $i from 1 through 24 {
+		$width: calc($i / 24);
+		
+		& > .col-#{$i} {
+			flex-grow: 0;
+			width:  $width * 100%;
+		}
+		$cols : calc(1 / $width);
+		$j: 0;
+		@while $j < 40 {
+			&.gap-#{$j} > .col-#{$i} {
+				width: calc($width * 100% - ($cols - 1) / $cols * $j * 1px);
+			}
+			$j: $j + 4;
+		}
+	}
+}
+
+.row-layout {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	
+	@for $i from 1 through 24 {
+		$height: calc($i / 24);;
+		
+		& > .row-#{$i} {
+			flex-grow: 0;
+			height:  $height * 100%;
+		}
+		$rows : calc( 1 / $height);
+		$j: 0;
+		@while $j < 40 {
+			&.gap-#{$j} > .row-#{$i} {
+				height: calc($height * 100% - ($rows - 1) / $rows * $j * 1px);
+			}
+			$j: $j + 4;
+		}
+	}
+}
+
+.container-layout {
+	box-sizing: border-box;
+	display: inline-block;
+	background-color: #fff;
+	min-width: 100px;
+	min-height: 100px;
+	border-radius: 4px;
+	padding: 8px;
+	
+	overflow-x: hidden;
+	overflow-y: auto;
+	
+	&.x-scroll {
+		overflow-x: auto;
+	}
+	&.y-hidden {
+		overflow-y: hidden;
+	}
+	
+	&.full-mode {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.page-layout {
+	height: 100%;
+	margin: 0;
+
+	
+	$j: 0;
+	@while $j < 40 {
+		&.gap-#{$j} {
+			margin: $j * 1px;
+			height: calc(100% - $j * 2px);
+		}
+		$j: $j + 4;
+	}
+}
+
+.hidden-layout {
+	display: none;
+}

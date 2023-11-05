@@ -17,6 +17,8 @@ import { useSso } from '/@/hooks/web/useSso';
 // 注册online模块lib
 import { registerPackages } from '/@/utils/monorepo/registerPackages';
 
+import ElementPlus from 'element-plus'
+
 // 在本地开发中引入的,以提高浏览器响应速度
 if (import.meta.env.DEV) {
   // @ts-ignore
@@ -61,6 +63,8 @@ async function bootstrap() {
 
   // 当路由准备好时再执行挂载( https://next.router.vuejs.org/api/#isready)
   await router.isReady();
+
+  app.use(ElementPlus)
 
   // 挂载应用
   app.mount('#app', true);

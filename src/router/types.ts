@@ -14,6 +14,12 @@ export interface AppRouteRecordRaw extends Omit<RouteRecordRaw, 'meta'> {
   props?: Recordable;
   fullPath?: string;
   alwaysShow?: boolean;
+  businessMeta?: {
+    isMapLayout?: boolean,
+    noMenu?: boolean,
+    noHead?: boolean,
+    notInMenu?: boolean
+  }
 }
 
 export interface MenuTag {
@@ -45,9 +51,8 @@ export interface Menu {
   tag?: MenuTag;
 
   hideMenu?: boolean;
-  
+
   alwaysShow?: boolean;
-  
 }
 
 export interface MenuModule {

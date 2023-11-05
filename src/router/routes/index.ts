@@ -8,6 +8,8 @@ import { t } from '/@/hooks/web/useI18n';
 
 const modules = import.meta.glob('./modules/**/*.ts', { eager: true });
 
+// const modules = import.meta.glob('./modules/business/sharedbike.ts', { eager: true });
+
 const routeModuleList: AppRouteModule[] = [];
 
 // 加入到路由集合中
